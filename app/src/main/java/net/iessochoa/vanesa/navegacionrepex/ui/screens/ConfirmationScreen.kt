@@ -28,8 +28,10 @@ fun ConfirmationScreen(
 
     Column(Modifier.padding(16.dp)) {
 
-        OrderSummaryCard(order = uiState.currentOrder)
-
+        //Para que no se cierre la app de golpe hago una comprobación
+        if (uiState.currentOrder.item != null) {
+            OrderSummaryCard(order = uiState.currentOrder)
+        }
         Spacer(Modifier.height(16.dp))
 
         PriceSelector(
