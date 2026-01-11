@@ -17,7 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import net.iessochoa.vanesa.navegacionrepex.model.MenuItem
 
-
+//Lo usa orderScreen
 @Composable
 fun MenuItemCard(
     item: MenuItem,

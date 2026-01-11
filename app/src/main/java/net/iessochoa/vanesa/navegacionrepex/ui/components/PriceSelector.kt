@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun PriceSelector(
-    quantity: Int,
-    onQuantityChange: (Int) -> Unit
+    valor: Float,
+    onQuantityChange: (Float) -> Unit
 ) {
     Column(Modifier.padding(8.dp)) {
         Text("Cantidad")
@@ -25,8 +25,8 @@ fun PriceSelector(
 
         // TODO: Slider funcional
         Slider(
-            value = 0f, // MAL
-            onValueChange = { /* TODO */ },
+            value = valor,
+            onValueChange = onQuantityChange,
             valueRange = 0f..5f,
             steps = 4
         )

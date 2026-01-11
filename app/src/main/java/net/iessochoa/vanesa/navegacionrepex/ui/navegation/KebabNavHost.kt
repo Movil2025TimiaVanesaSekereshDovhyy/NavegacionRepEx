@@ -6,28 +6,30 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import net.iessochoa.vanesa.navegacionrepex.ui.KebabViewModel
+import net.iessochoa.vanesa.navegacionrepex.ui.screens.ConfirmationScreen
+import net.iessochoa.vanesa.navegacionrepex.ui.screens.OrderScreen
 
 @Composable
 fun KebabNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    viewModel: KebabViewModel = KebabViewModel()
+    viewModel: KebabViewModel
 ) {
     NavHost(
         navController = navController,
-        startDestination = Destinations.ORDER,
+        startDestination = MenuPrincipal.route,
         modifier = modifier
     ) {
-        composable(Destinations.ORDER) {
+        composable(MenuPrincipal.route) {
             OrderScreen(
                 viewModel = viewModel,
                 onNavigateToConfirmation = {
-                    navController.navigate(Destinations.CONFIRMATION)
+                    navController.navigate(Resumen.route)
                 }
             )
         }
 
-        composable(Destinations.CONFIRMATION) {
+        composable(Resumen.route) {
             ConfirmationScreen(
                 viewModel = viewModel,
                 onNewOrder = { navController.popBackStack() }

@@ -10,5 +10,5 @@ import net.iessochoa.vanesa.navegacionrepex.model.Order
  */
 data class KebabUiState(
     val menu: List<MenuItem> = emptyList(),
-    val currentOrder: Order = Order()
+    val currentOrder: Order = Order(),
 )

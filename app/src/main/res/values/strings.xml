@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">NavegacionRepEx</string>
+    <string name="app_name">Kebab</string>
+    <string name="product">Producto</string>
+    <string name="summary">Resumen</string>
 </resources>

@@ -1,7 +1,7 @@
 package net.iessochoa.vanesa.navegacionrepex.data
 
-import android.view.MenuItem
 import net.iessochoa.vanesa.navegacionrepex.R
+import net.iessochoa.vanesa.navegacionrepex.model.MenuItem
 
 /**
  * Repositorio simulado para el menú del kiosco.
@@ -9,7 +9,7 @@ import net.iessochoa.vanesa.navegacionrepex.R
  * NO TOCAR.
  */
 object MenuRepository {
-    private val menu = listOf(
+    private val menus = mutableListOf(
         MenuItem(
             id = 1,
             name = "Kebab Clásico",
@@ -42,5 +42,12 @@ object MenuRepository {
         )
     )
 
-    fun getMenu(): List<MenuItem> = menu
+    fun getMenu(): List<MenuItem> = menus
+
+    fun updateMenu(updateMenu: MenuItem){
+        val index = menus.indexOfFirst { it.id == updateMenu.id }
+        if (index != -1) {
+            menus[index] = updateMenu
+        }
+    }
 }
